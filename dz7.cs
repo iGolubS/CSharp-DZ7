@@ -66,6 +66,7 @@
 
 int[,] massiv = new int[3,7];
 Random sluchay = new Random();
+double numLine = 0;
 for (int i = 0; i < massiv.GetLength(0); i++)
 {
     for (int j = 0; j < massiv.GetLength(1); j++)
@@ -74,6 +75,7 @@ for (int i = 0; i < massiv.GetLength(0); i++)
         Console.Write($"{massiv[i, j]}\t");
     }
     Console.WriteLine();
+    numLine++;
 }
 Console.Write("Среднее арифметическое каждого столбца: ");
 int sum = 0;
@@ -83,6 +85,6 @@ for (int j = 0; j < massiv.GetLength(1); j++)
     {
         sum=sum+massiv[i,j];
     }
-    Console.Write($"{sum}; ");
+    Console.Write("{0,6:F1}", sum/numLine );
     sum = 0;
 }
